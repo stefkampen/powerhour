@@ -124,7 +124,6 @@ class MyDevice extends Homey.Device {
 
       // fetch and handle prices now, after short random delay
       await this.setAvailable().catch(this.error);
-      await setTimeoutPromise(20 * 1000); // wait for sum and bat devices to be ready after app start // (this.fetchDelay / 30); // spread over 1 minute for API rate limit (400 / min)
       await this.fetchExchangeRate();
       await this.fetchPrices();
       // await this.setCapabilitiesAndFlows();
